@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212127560575026010}
   - component: {fileID: 61184846552861628}
   - component: {fileID: 50794165725730682}
-  - component: {fileID: 114595141582853564}
+  - component: {fileID: 114486068170474690}
   m_Layer: 0
   m_Name: Braindead
   m_TagString: Untagged
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.49159634, y: 2.2587833}
   m_EdgeRadius: 0
---- !u!114 &114595141582853564
+--- !u!114 &114486068170474690
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
