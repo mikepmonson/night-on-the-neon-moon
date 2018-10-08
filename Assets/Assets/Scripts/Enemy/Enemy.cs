@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable {
+abstract class Enemy : MonoBehaviour, IDamageable {
     
     public enum EnemyState
     {
@@ -12,23 +12,21 @@ public class Enemy : MonoBehaviour, IDamageable {
         Dying
     }
 
-    public int Health
+    abstract public int Health
     {
         get; set;    
     }
 
-    public float MoveSpeed
+    abstract public float MoveSpeed
     {
         get; set;
     }
 
-    public EnemyState CurrentState
+    abstract public EnemyState CurrentState
     {
         get; set;
     }
 
-    public void TakeDamage(int amount)
-    {
-        this.Health -= amount;
-    }
+    abstract public void TakeDamage(int amount);
+    
 }
