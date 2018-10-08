@@ -14,7 +14,16 @@ public class Projectile : MonoBehaviour {
 
 
     void Awake() {
-        this.gameObject.AddComponent<BoxCollider2D>();
+        //find out if player or enemy shot
+        //set _trajectory to the angle (target vector3 - origin vector3)
+        if(this.tag == "ProjectilePlayer")
+        {
+            
+        }
+        else if(this.tag == "ProjectileEnemy")
+        {
+
+        }
     }
     void Start () {
 		
