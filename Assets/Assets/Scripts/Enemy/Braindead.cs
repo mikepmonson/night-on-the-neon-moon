@@ -35,23 +35,27 @@ public class Braindead : Enemy {
     public override EnemyState CurrentState { get; set; }
 
     //THIS FIELD IS ONLY FOR TESTING UNTIL GAMEMANAGER IS COMPLETE
-    public GameObject[] buildings = new GameObject[] { new GameObject("b1"),
-        new GameObject("b2"), new GameObject("b3"), new GameObject("b4") };
+    public GameObject[] buildings;
     //END TESTING FIELD
 
 
     // Use this for initialization
     void Start () {
         BuildingAttackCooldown = 2f;
-        AggroRange = .5f;
+        AggroRange = 1.5f;
         MoveSpeed = 2f;
-
-	}
+        buildings = GameObject.FindGameObjectsWithTag("Building");
+        CurrentState = EnemyState.Moving;
+        Target = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Started");
+}
 	
 	// Update is called once per frame
 	void Update () {
         //check status
+        Debug.Log("Checking status...");
         CheckStatus();
+        Debug.Log("Checked status...");
         //check aggro
         Aggro();
         //move toward target
@@ -66,8 +70,11 @@ public class Braindead : Enemy {
         }
         else if(CurrentState == EnemyState.Moving)
         {
+            Debug.Log("Status is moving");
             //move towards target
-            Vector3.MoveTowards(this.gameObject.transform.position, Target.transform.position, MoveSpeed * Time.deltaTime);
+            Debug.Log("moving...");
+            this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, Target.transform.position, MoveSpeed * Time.deltaTime);
+            Debug.Log("Moved.");
         }
         else if (CurrentState == EnemyState.Attacking)
         {
