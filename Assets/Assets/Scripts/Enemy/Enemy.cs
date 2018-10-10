@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract class Enemy : MonoBehaviour, IDamageable {
+public abstract class Enemy : MonoBehaviour, IDamageable {
     
     public enum EnemyState
     {
