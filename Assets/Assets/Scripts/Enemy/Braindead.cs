@@ -23,7 +23,7 @@ using UnityEngine;
         On collision:
             If collision target is tagged as player, make them receive damage (IDamageable)   
     */
-public class Braindead : MonoBehaviour{
+public class Braindead : Enemy, IDamageable{
 
     //Properties
     public GameObject Target { get; set; }
