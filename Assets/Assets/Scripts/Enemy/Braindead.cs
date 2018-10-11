@@ -94,7 +94,10 @@ public class Braindead : Enemy {
             Destroy(this.gameObject);
         }
     }
-
+    /// <summary>
+    /// This method is triggered if another object with a collider enters this collider. This will check if the player collided with either the player or a projectile.
+    /// </summary>
+    /// <param name="other object that triggered this"></param>
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
