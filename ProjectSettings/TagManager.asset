@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-<<<<<<< HEAD
-  - Enemy
-  - ProjectilePlayer
-  - ProjectileEnemy
-=======
-  - Building
->>>>>>> 303da5e05768adc110a8297ac951a7ce35c70339
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -47,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 467786343
-    locked: 0
-  - name: Foreground
-    uniqueID: 282388015
     locked: 0
