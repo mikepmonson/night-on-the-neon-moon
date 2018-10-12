@@ -1,12 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "night-on-the-neon-moon", "night-on-the-neon-moon.csproj", "{FB240A00-9F40-B4D5-5F26-2BF8854E306F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB240A00-9F40-B4D5-5F26-2BF8854E306F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB240A00-9F40-B4D5-5F26-2BF8854E306F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB240A00-9F40-B4D5-5F26-2BF8854E306F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB240A00-9F40-B4D5-5F26-2BF8854E306F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
