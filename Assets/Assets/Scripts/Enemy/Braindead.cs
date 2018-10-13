@@ -34,14 +34,13 @@ public class Braindead : Enemy, IDamageable{
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (buildings.Count <= 0)
-            Destroy(this.gameObject);
+	void Update () {  
         Aggro();
         //check status      
         CheckStatus();
-        //check aggro
-        
+        if (buildings.Count <= 0)
+            Destroy(this.gameObject);
+
     }
 
     private void CheckStatus()
