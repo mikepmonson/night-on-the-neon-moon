@@ -46,4 +46,6 @@ public class Player : MonoBehaviour, IDamageable {
     {
         
     }
+
+    //for shooting, when instantiating the projectile do: Instantiate(projectile, new Vector3(this.transform.position.x + .188, this.transform.position.y + .153, 0), Quaternion.Identity)
 }
