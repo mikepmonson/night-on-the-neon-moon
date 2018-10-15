@@ -33,7 +33,9 @@ public class Braindead : Enemy, IDamageable{
         Debug.Log("Started");
     }
 	
-	// Update is called once per frame
+	/// <summary>
+    /// Check the aggro and check the status. if no buildings have more than 0 health, destroy the gameobject
+    /// </summary>
 	void Update () {  
         Aggro();
         //check status      
@@ -43,6 +45,9 @@ public class Braindead : Enemy, IDamageable{
 
     }
 
+    /// <summary>
+    /// Check the status of the gameobject and act accordingly
+    /// </summary>
     private void CheckStatus()
     {
         if(CurrentState == EnemyState.Entering)
@@ -73,6 +78,10 @@ public class Braindead : Enemy, IDamageable{
         }
     }
     
+    /// <summary>
+    /// if this player comes in contact with a player, damage the player. if it is a building, start attacking the building
+    /// </summary>
+    /// <param name="other"> the other object this collided with </param>
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
@@ -87,6 +96,10 @@ public class Braindead : Enemy, IDamageable{
         }
     }
 
+    /// <summary>
+    /// if the player is within aggro range, make the target the player and chase it
+    /// otherwise, start moving to the nearest building that has more than 0 hp
+    /// </summary>
     public void Aggro()
     {
         //if the difference between the player position and this gameObject position is in range, target the player 
@@ -104,6 +117,10 @@ public class Braindead : Enemy, IDamageable{
         }
     }
 
+    /// <summary>
+    ///  finds the closest building to this gameobject
+    /// </summary>
+    /// <returns> closest building t othis object </returns>
     public GameObject FindNearestBuilding()
     {
             GameObject closestBuilding = buildings[0];
@@ -117,6 +134,10 @@ public class Braindead : Enemy, IDamageable{
             return closestBuilding;      
     }
 
+    /// <summary>
+    /// if not chasing the player and can attack is true, if the target is a building, damage the building, set the last attacked time
+    /// remove the building from the list if it is 0 hp or below
+    /// </summary>
     private void Attack()
     {
         if (!ChasingPlayer && CanAttack() == true)
@@ -136,6 +157,10 @@ public class Braindead : Enemy, IDamageable{
         }
     }
 
+    /// <summary>
+    /// uses cooldown, current gametime, and the last attacked time to determine if the enemy can make an attack
+    /// </summary>
+    /// <returns> whether or not the braindead can attack</returns>
     private bool CanAttack()
     {
         if (LastAttacked + BuildingAttackCooldown <= Time.time)
@@ -144,6 +169,10 @@ public class Braindead : Enemy, IDamageable{
             return false;
     }
 
+    /// <summary>
+    /// reduce health by the amoutn of damage taken. if the health is 0 or lower, enter dying state
+    /// </summary>
+    /// <param name="amount"> the amount of damage to take</param>
     public override void TakeDamage(int amount)
     {
         this.Health -= amount;

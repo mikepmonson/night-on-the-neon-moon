@@ -8,9 +8,11 @@ public class Projectile : MonoBehaviour {
     private float _velocity; //speed of the projectile
     [SerializeField]
     private float _lifetime; //how long the projectile GameObject stays alive
-    public float birth;
+    public float birth;//time the projectile was instantiated
 
-
+    /// <summary>
+    /// Get the position of the cursor, set the z value to 0 to match other gameobjects. adjeust rotation of projectile to match the vector of the mouse
+    /// </summary>
     private void Awake()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -23,13 +25,19 @@ public class Projectile : MonoBehaviour {
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle -= 90));
     }
+
+    /// <summary>
+    /// set velocity, lifetime, and the game time the object was instantiated
+    /// </summary>
     void Start () {
         _velocity = 3.0f;
         _lifetime = 5.0f;
         birth = Time.time;
     }
 	
-	// Update is called once per frame
+	/// <summary>
+    /// move the object, and destroy the object if it has outlived its lifetime
+    /// </summary>
 	void Update () {
         Movement();
         if (Time.time - birth >= _lifetime)
@@ -38,13 +46,19 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-
+    /// <summary>
+    /// move the projectile
+    /// </summary>
     private void Movement()
     {
         this.transform.Translate(new Vector3(0,1,0) * _velocity * Time.deltaTime);
         
     }
 
+    /// <summary>
+    /// if the projectile comes in contact with an object with the tag of Enemy, damage the enemy
+    /// </summary>
+    /// <param name="other">the object this collided with</param>
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy")

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Building : MonoBehaviour, IDamageable {
 
-    public int Health { get; set; }
+    public int Health { get; set; }//building health
     [SerializeField]
-    private Sprite[] _buildingSprites;
+    private Sprite[] _buildingSprites;//array of building sprites to indicate damage state
 
     // Use this for initialization
     void Start () {
@@ -17,7 +17,10 @@ public class Building : MonoBehaviour, IDamageable {
 	void Update () {
         
 	}
-
+    /// <summary>
+    /// reduce health and update sprite
+    /// </summary>
+    /// <param name="amount"> amount of damage to be taken</param>
     public void TakeDamage(int amount)
     {
         this.Health -= amount;
@@ -26,6 +29,9 @@ public class Building : MonoBehaviour, IDamageable {
         UpdateSprite();
     }
 
+    /// <summary>
+    /// update the sprite to match building health
+    /// </summary>
     private void UpdateSprite()
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = _buildingSprites[Health];
