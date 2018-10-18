@@ -26,19 +26,14 @@ public class Player : MonoBehaviour, IDamageable {
     void HandleInput()
     {
         lastDir = new Vector3(0, 0, 0);
-        lastDir.x = Input.GetAxis("Horizontal");
-        lastDir.y = Input.GetAxis("Vertical");
-
-        if (!lastDir.x.Equals(0f) && !lastDir.y.Equals(0f))
-        {
-            lastDir *= 0.5f;
-        }
-
+        lastDir.x = Input.GetAxisRaw("Horizontal");
+        lastDir.y = Input.GetAxisRaw("Vertical");
 
         //ToDo: Handle Firing
     }
     void HandleMovement()
     {
+        lastDir = Vector3.Normalize(lastDir);
         transform.Translate(lastDir * moveSpeed * Time.deltaTime);
     }
 
