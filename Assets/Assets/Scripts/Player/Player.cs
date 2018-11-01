@@ -6,6 +6,7 @@ public class Player : MonoBehaviour, IDamageable {
     public float moveSpeed = 3f;
     public int Health { get; set; }
     public float primaryCooldown = 1f;
+    public int MaxHealth { get; set; }
 
     private Vector3 lastDir;
     [SerializeField]
