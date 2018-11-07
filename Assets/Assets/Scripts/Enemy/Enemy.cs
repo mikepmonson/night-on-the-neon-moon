@@ -17,6 +17,11 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
         get; set;    
     }
 
+    abstract public int MaxHealth
+    {
+        get; set;
+    }
+
     abstract public float MoveSpeed
     {
         get; set;
