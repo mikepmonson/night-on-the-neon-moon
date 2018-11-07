@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour {
     /// set velocity, lifetime, and the game time the object was instantiated
     /// </summary>
     void Start () {
-        _velocity = 3.0f;
+        _velocity = 10f;
         _lifetime = 5.0f;
         birth = Time.time;
     }

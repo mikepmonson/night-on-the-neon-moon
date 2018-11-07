@@ -6,8 +6,11 @@ public class Player : MonoBehaviour, IDamageable {
     public float moveSpeed = 3f;
     public int Health { get; set; }
     public float primaryCooldown = 1f;
+    public int MaxHealth { get; set; }
 
     private Vector3 lastDir;
+    [SerializeField]
+    private GameObject projectile;
 
 
 
@@ -21,6 +24,7 @@ public class Player : MonoBehaviour, IDamageable {
 	void Update () {
         HandleInput();
         HandleMovement();
+        Shoot();
 	}
 
     void HandleInput()
@@ -42,5 +46,14 @@ public class Player : MonoBehaviour, IDamageable {
         
     }
 
-    //for shooting, when instantiating the projectile do: Instantiate(projectile, new Vector3(this.transform.position.x + .188, this.transform.position.y + .153, 0), Quaternion.Identity)
+    /// <summary>
+    /// This was used for testing, delete when ready to implement actual shooting
+    /// </summary>
+    private void Shoot()
+    {
+        if(Input.GetMouseButton(0))
+        Instantiate(projectile, new Vector3(this.transform.position.x, this.transform.position.y + .153f, 0), Quaternion.identity);
+    }
+
+
 }

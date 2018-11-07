@@ -5,6 +5,10 @@ using System;
 
 public interface IDamageable
 {
+    int MaxHealth
+    {
+        get; set;
+    }
     int Health
     {
         get; set;

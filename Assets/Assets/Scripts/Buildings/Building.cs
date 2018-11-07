@@ -7,6 +7,7 @@ public class Building : MonoBehaviour, IDamageable {
     public int Health { get; set; }//building health
     [SerializeField]
     private Sprite[] _buildingSprites;//array of building sprites to indicate damage state
+    public int MaxHealth { get; set; }
 
     // Use this for initialization
     void Start () {
