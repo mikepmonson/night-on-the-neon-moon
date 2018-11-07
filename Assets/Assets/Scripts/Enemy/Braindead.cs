@@ -13,7 +13,7 @@ public class Braindead : Enemy, IDamageable{
     public override float MoveSpeed { get; set; }
     public override EnemyState CurrentState { get; set; }
     public float LastAttacked { get; set; }
-    public int MaxHealth { get; set; }
+    public override int MaxHealth { get; set; }
 
     //THIS FIELD IS ONLY FOR TESTING UNTIL GAMEMANAGER IS COMPLETE
     [SerializeField]
