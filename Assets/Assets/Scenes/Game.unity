@@ -157,6 +157,83 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!1001 &359203909
 Prefab:
+--- !u!1 &103171482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 103171484}
+  - component: {fileID: 103171483}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &103171483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 103171482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c189ca1e573da914db0c0206b3b1a63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  braindeadObject: {fileID: 1995396203186616, guid: 48e19cce779adcd49ae8d06e930b91ad,
+    type: 2}
+  shooterObject: {fileID: 1722243564846654, guid: 51482242e62f37746b9a0b7ac5973591,
+    type: 2}
+  player: {fileID: 0}
+  enemies: []
+  buildings:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PowerupProgress: 0
+  PowerupStock: 0
+  gameState: 0
+  waveNo: 0
+  enemiesToSpawn: 20
+  timeBetweenSpawns: 2
+  chanceForShooter: 0.1
+--- !u!4 &103171484
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 103171482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &251723666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 251723669}
+  - component: {fileID: 251723668}
+  - component: {fileID: 251723667}
+  m_Layer: 0
+  m_Name: Sprite_Stock_Shooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &251723667
+BoxCollider2D:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
