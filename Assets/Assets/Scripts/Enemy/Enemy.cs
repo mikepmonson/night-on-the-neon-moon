@@ -17,7 +17,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
         get; set;    
     }
 
-    abstract public int MaxHealth
+    public int MaxHealth
     {
         get; set;
     }
