@@ -6,7 +6,6 @@ public class Shooter : Enemy, IDamageable {
     public override int Health { get; set; }
     public override float MoveSpeed { get; set; }
     public override EnemyState CurrentState { get; set; }
-    public override int MaxHealth { get; set; }
     [SerializeField]
     private GameObject _projectile;
     private float _fireCooldown;
